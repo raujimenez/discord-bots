@@ -3,8 +3,10 @@ const client = new Discord.Client();
 
 const Sentiment = require('sentiment');
 const sentiment = new Sentiment();
- 
-client.login('MTE1NTczMTc3MDM5NTg1Mjg5.XSLogg.Lg5KNZejH69O-pbBKjuQaP7vRuY');
+require('dotenv').config();
+
+
+client.login(process.env.YOUR_TOKEN);
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);  

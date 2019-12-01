@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-client.login('MTE1NTczMTc3MDM5NTg1Mjg5.XSLogg.Lg5KNZejH69O-pbBKjuQaP7vRuY');
+client.login(process.env.YOUR_TOKEN);
 
 const status = ['online', 'idle', 'dnd'];
 
