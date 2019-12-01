@@ -34,7 +34,8 @@ client.on('ready', () => {
     else {
         output += "\noverall neutral vibes in the past " + count.toString() + " messages.";
     }
-    channel.send(output.toString()).then( () =>
-    process.exit(1));
+    channel.send(output.toString())
+    .then( () =>
+        process.exit(1));
   });
  });
