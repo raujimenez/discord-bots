@@ -21,7 +21,7 @@ client.on("message", async message => {
     message.reply('`itsmetony.aternos.me`')
   }
   else if (/^!tony.start$/.test(message.content)) {
-    const driver = await new Builder().forBrowser('chrome').build();
+    const driver = await new Builder().forBrowser('chrome').setChromeService('/usr/bin/chromedriver').build();
     await driver.get('https://aternos.org/go/')
     // login
     await driver.findElement(By.id('user')).sendKeys('itsmetony')
