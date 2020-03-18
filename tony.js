@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const {Builder, By, Key, util} = require('selenium-webdriver');
+const fetch = require('node-fetch');
 require("dotenv").config();
 
 const client = new Discord.Client();
@@ -11,10 +12,10 @@ client.on("ready", () => {
 });
 
 client.on("message", async message => {
-  if (/^!tony.up$/.test(message.content)) {
-    const response = await fetch('https://itsmetony.aternos.me');
+  if (/^!tony.status$/.test(message.content)) {
+    const response = await fetch('https://itsmetony.aternos.me/');
     const text = await response.text();
-    message.reply(text.includes('offline') ? 'offline' : 'online')
+    await message.reply(text.includes('offline') ? 'offline' : 'online')
   }
   else if (/^!tony.ip$/.test(message.content)) {
     message.reply('`itsmetony.aternos.me`')
@@ -29,7 +30,7 @@ client.on("message", async message => {
     help += '!tony.stop - stop server'; 
     message.reply(help)
   }
-  else if (/^!tony.*$/.test(message.content)) {
+  else if (/^!tony\.*$/.test(message.content)) {
     message.reply('type !tony.help to see list of commands.')
   }
 });
