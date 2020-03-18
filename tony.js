@@ -28,9 +28,7 @@ client.on("message", async message => {
     await driver.get("https://aternos.org/go/");
     // login
     await driver.findElement(By.id("user")).sendKeys("itsmetony");
-    await driver.findElement(
-      By.id("password").sendKeys(process.env.aternoskey)
-    );
+    await driver.findElement(By.id("password")).sendKeys(process.env.aternoskey);
     await driver.findElement(By.id("login")).click();
     console.log("logged in");
 
