@@ -27,10 +27,12 @@ client.on("message", async message => {
     await driver.findElement(By.id('user')).sendKeys('itsmetony')
     await driver.findElement(By.id('password').sendKeys(process.env.aternoskey))
     await driver.findElement(By.id('login')).click()
+    console.log('logged in');
 
     const start = await driver.findElement(By.id('start'))
     if (start.isDisplayed()) {
       start.click()
+      console.log('click');
     }
 
     await message.reply('starting')
