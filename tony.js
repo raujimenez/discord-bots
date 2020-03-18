@@ -47,7 +47,7 @@ client.on("message", async message => {
     help += "!tony.start - start server";
     help += "!tony.stop - stop server";
     message.reply(help);
-  } else if (/^!tony\.*$/.test(message.content)) {
+  } else if (/^!tony.*$/.test(message.content)) {
     message.reply("type !tony.help to see list of commands.");
   }
 });
