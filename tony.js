@@ -20,6 +20,7 @@ client.on("message", async message => {
   } else if (/^!tony.ip$/.test(message.content)) {
     message.reply("`itsmetony.aternos.me`");
   } else if (/^!tony.start$/.test(message.content)) {
+    console.log('start')
     const driver = await new Builder()
       .forBrowser("chrome")
       .setChromeService(new ServiceBuilder("/usr/bin/chromedriver"))
