@@ -21,6 +21,19 @@ client.on("message", async message => {
     message.reply('`itsmetony.aternos.me`')
   }
   else if (/^!tony.start$/.test(message.content)) {
+    const driver = await new Builder().forBrowser('chrome').build();
+    await driver.get('https://aternos.org/go/')
+    // login
+    await driver.findElement(By.id('user')).sendKeys('itsmetony')
+    await driver.findElement(By.id('password').sendKeys(process.env.aternoskey))
+    await driver.findElement(By.id('login')).click()
+
+    const start = await driver.findElement(By.id('start'))
+    if (start.isDisplayed()) {
+      start.click()
+    }
+
+    await message.reply('starting')
 
   }
   else if (/^!tony.help$/.test(message.content)) {
