@@ -7,6 +7,7 @@
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
     "mongodb": "^3.4.1",
+    "selenium-webdriver": "^4.0.0-alpha.7",
     "sentiment": "^5.0.1"
   },
   "devDependencies": {},
