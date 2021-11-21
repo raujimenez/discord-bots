@@ -37,7 +37,7 @@ client.on('message', async (message) => {
     if (participants.some(user => user.info.id == message.author.id)) {
       participants = participants.filter(participant => participant.info.id != message.author.id)
       console.log('removed user ' + message.author.username)
-      message.react(message.guild.emojis.find(emoji => emoji.name == 'Thumbsup'))
+      message.react(message.guild.emojis.find(emoji => emoji.name == 'sadup'))
     }
     else {
       console.log('did not remove user ' + message.author.username)
